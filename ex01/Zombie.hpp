@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 09:40:12 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 10:15:55 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:35:51 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class Zombie
 {
 private:
-	string _name;
+	std::string _name;
 
 public:
 	void announce(void) const;
-	void setName(string name);
+	void setName(std::string name);
 	Zombie();
 	~Zombie(void);
 };
 
-Zombie *zombieHorde(int N, string name);
+Zombie *zombieHorde(int N, std::string name);

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:06:59 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:35:51 by mazeghou         ###   ########.fr       */
+/*   Created: 2025/02/18 11:32:16 by mazeghou          #+#    #+#             */
+/*   Updated: 2025/02/18 19:35:52 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "./Weapon.hpp"
 
-class Harl
+Weapon::Weapon(std::string type)
 {
-private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
+	this->setType(type);
+}
 
-public:
-	void complain(std::string level);
-};
+Weapon::~Weapon()
+{
+}
+
+const std::string &Weapon::getType(void) const
+{
+	return (this->_type);
+}
+
+void Weapon::setType(std::string type)
+{
+	this->_type = type;
+}

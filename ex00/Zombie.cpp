@@ -6,26 +6,24 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 09:46:47 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 10:15:33 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:35:51 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Zombie.hpp"
 
-using namespace std;
-
-Zombie::Zombie(string name) : _name(name)
+Zombie::Zombie(std::string name) : _name(name)
 {
-	cout << "Hi, my name is " << name << " and I am not a zombie, really." << endl;
+	std::cout << "Hi, my name is " << name << " and I am not a zombie, really." << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-	cout << "Damn, I (" << _name << ") really was one." << endl;
+	std::cout << "Damn, I (" << _name << ") really was one." << std::endl;
 }
 
 void Zombie::announce(void) const
 {
-	cout << _name << ": BraiiiiiiinnnzzzZ...\n"
-		 << endl;
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n"
+			  << std::endl;
 }

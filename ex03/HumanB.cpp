@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:06:59 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:35:51 by mazeghou         ###   ########.fr       */
+/*   Created: 2025/02/18 11:45:35 by mazeghou          #+#    #+#             */
+/*   Updated: 2025/02/18 19:35:52 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "./HumanB.hpp"
 #include <iostream>
 
-class Harl
+HumanB::HumanB(std::string name)
 {
-private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
+	this->_name = name;
+	this->weapon = weapon;
+}
 
-public:
-	void complain(std::string level);
-};
+HumanB::~HumanB()
+{
+}
+
+std::string HumanB::getName(void) const
+{
+	return (this->_name);
+}
+
+void HumanB::setWeapon(Weapon weapon)
+{
+	this->weapon = &weapon;
+}
+
+void HumanB::attack() const
+{
+	std::cout << this->getName() << " attacks with their " << weapon->getType() << std::endl;
+}

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:06:59 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:35:51 by mazeghou         ###   ########.fr       */
+/*   Created: 2025/02/18 11:45:35 by mazeghou          #+#    #+#             */
+/*   Updated: 2025/02/18 19:35:52 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "./HumanA.hpp"
 #include <iostream>
 
-class Harl
+HumanA::HumanA(std::string name, Weapon weapon) : _name(name), weapon(weapon)
 {
-private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
+	this->_name = name;
+	this->weapon = weapon;
+}
 
-public:
-	void complain(std::string level);
-};
+HumanA::~HumanA()
+{
+}
+
+std::string HumanA::getName(void) const
+{
+	return (this->_name);
+}
+
+void HumanA::attack() const
+{
+	std::cout << this->getName() << " attacks with their " << this->weapon.getType() << std::endl;
+}

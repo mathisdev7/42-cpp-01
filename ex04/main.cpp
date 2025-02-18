@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:50:16 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 16:06:21 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:37:27 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
-
 int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		cout << "You need to pass 3 arguments (fileName, s1, s2)." << endl;
+		std::cout << "You need to pass 3 arguments (fileName, s1, s2)." << std::endl;
 		return (0);
 	}
-	string fileName = argv[1];
-	string s1 = argv[2];
-	string s2 = argv[3];
-	string content, line;
-	ifstream infile(fileName.c_str());
+	std::string fileName = argv[1];
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+	std::string content, line;
+	std::ifstream infile(fileName.c_str());
 	if (!infile)
 	{
-		cerr << "Error: file not found." << endl;
+		std::cerr << "Error: file not found." << std::endl;
 		return (0);
 	}
 	while (getline(infile, line))
@@ -39,7 +37,7 @@ int main(int argc, char **argv)
 	}
 	infile.close();
 	int j = 0;
-	string temp_content = content;
+	std::string temp_content = content;
 	for (long unsigned int i = 0; i < temp_content.length(); i++)
 	{
 		if (!s1[j] || !temp_content[i])
@@ -52,10 +50,10 @@ int main(int argc, char **argv)
 		}
 	}
 	fileName.append(".replace");
-	ofstream file(fileName.c_str());
+	std::ofstream file(fileName.c_str());
 	if (!file)
 	{
-		cerr << "Error opening file for writing\n";
+		std::cerr << "Error opening file for writing\n";
 		return 1;
 	}
 	file << temp_content;

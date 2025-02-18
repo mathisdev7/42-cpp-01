@@ -5,36 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:22:46 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:38:25 by mazeghou         ###   ########.fr       */
+/*   Created: 2025/02/18 11:18:19 by mazeghou          #+#    #+#             */
+/*   Updated: 2025/02/18 19:35:52 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "./Harl.hpp"
-#include <cstdlib>
 
 int main()
 {
-	Harl harl;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *str_ptr = &str;
+	std::string &str_ref = str;
 
-	std::cout << "Harl talks a lot." << std::endl
-			  << std::endl;
-	harl.complain("ERROR");
-	harl.complain("something else");
-	std::cout << "Select a level to make Harl talk." << std::endl;
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << "level: ";
-		std::string input;
-		std::getline(std::cin, input);
-		if (std::cin.eof() == true)
-		{
-			std::cerr << "Exit..." << std::endl;
-			exit(1);
-		}
-		harl.complain(input);
-		std::cout << std::endl;
-	}
-	return (1);
+	(void)str_ptr;
+	(void)str_ref;
+	std::cout << "Memory address of str: " << &str << std::endl;
+	std::cout << "Memory address of str_ptr: " << str_ptr << std::endl;
+	std::cout << "Memory address of str_ref: " << &str_ref << std::endl;
+	std::cout << "--------------------------" << std::endl;
+	std::cout << "Value of str: " << str << std::endl;
+	std::cout << "Value pointed to by str_ptr: " << *str_ptr << std::endl;
+	std::cout << "Value pointed to by str_ref: " << str_ref << std::endl;
 }

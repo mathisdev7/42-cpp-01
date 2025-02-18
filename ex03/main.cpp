@@ -5,36 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:22:46 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:38:25 by mazeghou         ###   ########.fr       */
+/*   Created: 2025/02/18 11:35:54 by mazeghou          #+#    #+#             */
+/*   Updated: 2025/02/18 19:35:18 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "./Harl.hpp"
-#include <cstdlib>
+#include "./Weapon.hpp"
+#include "./HumanA.hpp"
+#include "./HumanB.hpp"
 
 int main()
 {
-	Harl harl;
-
-	std::cout << "Harl talks a lot." << std::endl
-			  << std::endl;
-	harl.complain("ERROR");
-	harl.complain("something else");
-	std::cout << "Select a level to make Harl talk." << std::endl;
-	for (int i = 0; i < 5; i++)
 	{
-		std::cout << "level: ";
-		std::string input;
-		std::getline(std::cin, input);
-		if (std::cin.eof() == true)
-		{
-			std::cerr << "Exit..." << std::endl;
-			exit(1);
-		}
-		harl.complain(input);
-		std::cout << std::endl;
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	return (1);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }
