@@ -18,6 +18,7 @@ using namespace std;
 HumanB::HumanB(string name)
 {
 	this->_name = name;
+	this->weapon = weapon;
 }
 
 HumanB::~HumanB()
@@ -28,14 +29,12 @@ string HumanB::getName(void) const
 	return (this->_name);
 }
 
-void HumanB::setWeapon(string type)
+void HumanB::setWeapon(Weapon weapon)
 {
-	Weapon weapon;
-	weapon.setType(type);
-	this->weapon = weapon;
+	this->weapon = &weapon;
 }
 
 void HumanB::attack() const
 {
-	cout << this->getName() << " attacks with their " << this->weapon.getType() << endl;
+	cout << this->getName() << " attacks with their " << weapon->getType() << endl;
 }

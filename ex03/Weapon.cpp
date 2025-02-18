@@ -14,13 +14,15 @@
 
 using namespace std;
 
-Weapon::Weapon()
-{}
+Weapon::Weapon(string type)
+{
+	this->setType(type);
+}
 
 Weapon::~Weapon()
 {}
 
-string Weapon::getType() const
+const string& Weapon::getType(void) const
 {
 	return (this->_type);
 }

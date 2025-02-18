@@ -21,10 +21,10 @@ class HumanB
 {
 	private:
 		string _name;
-		Weapon weapon;
+		Weapon *weapon;
 	public:
 		void attack(void) const;
-		void setWeapon(string type);
+		void setWeapon(Weapon weapon);
 		string getName(void) const;
 		HumanB(string name);
 		~HumanB(void);

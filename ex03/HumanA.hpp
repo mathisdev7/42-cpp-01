@@ -21,7 +21,7 @@ class HumanA
 {
 	private:
 		string _name;
-		Weapon weapon;
+		Weapon& weapon;
 	public:
 		void attack(void) const;
 		string getName(void) const;

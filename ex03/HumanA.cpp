@@ -15,7 +15,7 @@
 
 using namespace std;
 
-HumanA::HumanA(string name, Weapon weapon)
+HumanA::HumanA(string name, Weapon weapon)  : _name(name), weapon(weapon)
 {
 	this->_name = name;
 	this->weapon = weapon;

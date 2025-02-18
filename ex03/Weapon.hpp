@@ -21,8 +21,8 @@ class Weapon
 	private:
 		string _type;
 	public:
-		string getType() const;
+		const string& getType(void) const;
 		void setType(string type);
-		Weapon(void);
-		~Weapon(void);
+		Weapon(string type);
+		~Weapon();
 };
