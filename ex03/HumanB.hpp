@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:38:50 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:35:52 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:20:25 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 
 public:
 	void attack(void) const;
-	void setWeapon(Weapon weapon);
+	void setWeapon(Weapon &weapon);
 	std::string getName(void) const;
 	HumanB(std::string name);
 	~HumanB(void);

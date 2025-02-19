@@ -6,7 +6,7 @@
 /*   By: mazeghou <mazeghou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:38:50 by mazeghou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:35:52 by mazeghou         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:20:20 by mazeghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ private:
 public:
 	void attack(void) const;
 	std::string getName(void) const;
-	HumanA(std::string name, Weapon weapon);
+	HumanA(std::string name, Weapon &weapon);
 	~HumanA(void);
 };
